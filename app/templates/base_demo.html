@@ -1,0 +1,18 @@
+<html>
+	<head>
+		{% if title %}
+			<title>{{ title }} - Test</title>
+		{% else %}
+			<title>Homework - Test</title>
+		{% endif %}
+	</head>
+	
+	<body>
+		<div>
+			<h1>{{ page_name }} Page</h1>
+			<hr>
+		</div>
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

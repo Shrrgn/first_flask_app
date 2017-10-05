@@ -1,0 +1,26 @@
+<html>
+<head>
+	{% if title %}
+	<title>{{ title }} - microblog</title>
+	{% else %}
+	<title>Home page</title>
+	{% endif %}
+</head>
+<body>
+	<div>Microblogik:<a href="/index">Home</a></div>
+	<hr><br>
+	{% with messages=get_flashed_messages() %}
+		{% if messages %}
+			<ul>
+			{% for msg in messages %}
+				<li> {{ msg }} </li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endwith %}
+				
+	
+	{% block content %} 
+	{% endblock content %}
+</body>
+</html>

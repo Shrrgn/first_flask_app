@@ -1,0 +1,47 @@
+<!-- extends index_demo layout-->
+{% extends "base_demo.html" %}
+
+{% block content %}
+
+
+
+<form action="" method="POST" name="registration_demo">
+	{{ form.hidden_tag() }}
+	<p>Enter your datas</p><br/>
+	<p>
+	
+	{{ form.login.label }} {{ form.login(size = 15) }} 
+		{% for error in form.errors.login %}
+			<span style="color:red;">[{{ error }}]</span>
+		{% endfor %}
+	<br/><br/>
+	
+	{{ form.full_name.label }} {{ form.full_name(size = 20)}}
+		{% for error in form.errors.full_name %}
+			<span style="color:red;">[{{ error }}]</span>
+		{% endfor %}
+	<br/><br/>
+
+	{{ form.hobby.label }} {{ form.hobby(size = 20) }}
+		{% for error in form.errors.hobby %}
+			<span style="color:red;">[{{ error }}]</span>
+		{% endfor %}
+	<br/><br/>
+	
+	{{ form.password.label }} {{ form.password(size = 20)}}
+		{% for error in form.errors.password %}
+			<span style="color:red;">[{{ error }}]</span>
+		{% endfor %}
+	<br/><br/>
+	
+	{{ form.confirm.label }} {{ form.confirm(size = 20)}}
+		{% for error in form.errors.confirm %}
+			<span style="color:red;">[{{ error }}]</span>
+		{% endfor %}
+	<br/><br/>
+	
+	</p>
+	<input type="submit" value="Sign">
+</form>
+
+{% endblock %}

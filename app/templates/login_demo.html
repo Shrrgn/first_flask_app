@@ -1,0 +1,14 @@
+<!-- extends index_demo layout-->
+{% extends "base_demo.html" %}
+
+{% block content %}
+
+<form action="" method="POST" name="login_demo">
+	{{ form.hidden_tag() }}
+	<p>Enter you login and password,please</p><br/>
+	{{ form.login.label }} {{ form.login(size = 15) }}<br/>
+	{{ form.password.label }} {{ form.password(size = 20)}}<br/>
+	<input type="submit" value="Submit">
+</form>
+
+{% endblock %}

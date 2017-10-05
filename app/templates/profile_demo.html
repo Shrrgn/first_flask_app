@@ -1,0 +1,27 @@
+{% extends "base_demo.html" %}
+
+{% block content %}
+
+
+{% if current_user.is_authenticated() %}
+
+	<!--<h3>Hello, {{ current_user.login }}</h3><br/>-->
+	Login : {{ current_user.login }}<br>
+	
+	{% if current_user.full_name %}
+	Full name : {{ current_user.full_name }}<br>
+	{% endif %}
+
+	{% if current_user.hobby%}
+	Hobby : {{ current_user.hobby }}<br>
+	{% endif %}
+
+	Password : {{ current_user.password }}<br>
+
+{% else %}
+	<h3>You don't have permission</h3><br>
+{% endif %}
+
+<a href="/index_demo">Index Page</a>
+
+{% endblock %}
